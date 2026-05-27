@@ -1,0 +1,1 @@
+function i(r){if(r==null||r==="")return"";const t=String(r).trim();return t.startsWith("data:")||t.startsWith("http://")||t.startsWith("https://")||t.startsWith("/uploads/")||t.startsWith("/api/")||t.startsWith("/")?t:"/uploads/"+t.replace(/^\/+/,"")}export{i as n};

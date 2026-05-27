@@ -1,0 +1,333 @@
+/* 全局拟态UI样式 */
+
+/* 基础重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e3e5e7;
+  font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 拟态按钮 */
+.neumorphic-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  box-shadow: 8px 8px 16px #b6b9ba, -8px -8px 16px #fafafd;
+  background-image: linear-gradient(145deg, #b6b9ba, #f4f6f8);
+  background: #e3e5e7;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.neumorphic-btn:hover {
+  box-shadow: 12px 12px 20px #b6b9ba, -12px -12px 20px #fafafd;
+}
+
+.neumorphic-btn:active {
+  box-shadow: inset 4px 4px 8px #b6b9ba, inset -4px -4px 8px #fafafd;
+}
+
+/* 拟态卡片 */
+.neumorphic-card {
+  border-radius: 20px;
+  box-shadow: 8px 8px 16px #b6b9ba, -8px -8px 16px #fafafd;
+  background: #e3e5e7;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.neumorphic-card:hover {
+  box-shadow: 12px 12px 20px #b6b9ba, -12px -12px 20px #fafafd;
+}
+
+/* 拟态输入框 */
+.neumorphic-input {
+  border-radius: 12px;
+  box-shadow: inset 4px 4px 8px #b6b9ba, inset -4px -4px 8px #fafafd;
+  background: #e3e5e7;
+  border: none;
+  padding: 12px 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.neumorphic-input:focus {
+  box-shadow: inset 6px 6px 12px #b6b9ba, inset -6px -6px 12px #fafafd;
+}
+
+/* 拟态小按钮 */
+.neumorphic-btn-sm {
+  padding: 8px 16px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px #b6b9ba, -4px -4px 8px #fafafd;
+  background: #e3e5e7;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  color: #333;
+}
+
+.neumorphic-btn-sm:hover {
+  box-shadow: 6px 6px 12px #b6b9ba, -6px -6px 12px #fafafd;
+}
+
+.neumorphic-btn-sm:active {
+  box-shadow: inset 2px 2px 4px #b6b9ba, inset -2px -2px 4px #fafafd;
+}
+
+/* 主按钮样式 */
+.btn-primary {
+  background: linear-gradient(145deg, #4A7C59, #3d6b4a);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(145deg, #5a9469, #4A7C59);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 124, 89, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* 文字链接 */
+.link-primary {
+  color: #4A7C59;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.link-primary:hover {
+  color: #5a9469;
+  text-decoration: underline;
+}
+
+/* 页面标题 */
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  padding-left: 12px;
+  border-left: 4px solid #4A7C59;
+}
+
+/* 页面副标题 */
+.page-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+/* 间距工具 */
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+
+/* 网格布局 */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* 响应式网格 */
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-4,
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-4,
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 弹性布局 */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* 文本工具 */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-primary { color: #4A7C59; }
+.text-danger { color: #e74c3c; }
+.text-success { color: #27ae60; }
+.text-gray { color: #999; }
+
+/* 价格样式 */
+.price {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.price-symbol {
+  font-size: 14px;
+}
+
+.price-value {
+  font-size: 20px;
+}
+
+/* 空状态 */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.empty-state-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.empty-state-text {
+  font-size: 16px;
+}
+
+/* 加载状态 */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+/* 分割线 */
+.divider {
+  height: 1px;
+  background: #ddd;
+  margin: 20px 0;
+}
+
+/* 标签 */
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  background: #4A7C59;
+  color: white;
+}
+
+.tag-gray {
+  background: #999;
+}
+
+/* Element Plus 覆盖样式 */
+.el-button--primary {
+  background: #4A7C59 !important;
+  border-color: #4A7C59 !important;
+}
+
+.el-button--primary:hover {
+  background: #5a9469 !important;
+  border-color: #5a9469 !important;
+}
+
+.el-input__wrapper {
+  background: #e3e5e7 !important;
+  box-shadow: inset 4px 4px 8px #b6b9ba, inset -4px -4px 8px #fafafd !important;
+}
+
+.el-select .el-input__wrapper {
+  background: #e3e5e7 !important;
+  box-shadow: inset 4px 4px 8px #b6b9ba, inset -4px -4px 8px #fafafd !important;
+}
+
+.el-textarea__inner {
+  background: #e3e5e7 !important;
+  box-shadow: inset 4px 4px 8px #b6b9ba, inset -4px -4px 8px #fafafd !important;
+  border: none !important;
+}
+
+.el-dialog {
+  border-radius: 20px !important;
+}
+
+.el-message-box {
+  border-radius: 20px !important;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e3e5e7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b6b9ba;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}

@@ -1,0 +1,79 @@
+server:
+  port: 8080
+  servlet:
+    context-path:
+
+# 启动时校正测试账号密码并补全空的价格监测表（上线可设为 false）
+app:
+  seed-data: true
+
+spring:
+  application:
+    name: moli-mall
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/moli_mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: ***DB_PASSWORD_REMOVED***
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: 
+      database: 0
+      timeout: 5000
+  cache:
+    type: redis
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+  # 静态资源映射：让 /uploads/* URL 能访问到 D:/uploads 目录下的文件
+  web:
+    resources:
+      static-locations:
+        - file:D:/uploads/
+        - classpath:/static/
+
+# 文件上传配置
+upload:
+  path: D:/uploads
+  url-prefix: /uploads
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+jwt:
+  secret: ***JWT_SECRET_REMOVED***==
+  expiration: 86400000
+
+# DeepSeek AI 大模型配置
+deepseek:
+  api-key: ***DEEPSEEK_API_KEY_REMOVED***
+  api-url: https://api.deepseek.com/v1/chat/completions
+  model: molihua
+  timeout: 30
+  max-tokens: 2048
+
+# 和风天气API配置（专属API）
+weather:
+  api-key: ***WEATHER_API_KEY_REMOVED***
+  location-id: 101300301
+  location-name: 横州
+
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+
+logging:
+  level:
+    com.hengzhou: debug
