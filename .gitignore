@@ -1,0 +1,17 @@
+# IDEA 工程缓存文件
+.idea/
+*.iml
+target/
+*.class
+*.log
+
+# 前端依赖与打包产物
+node_modules/
+dist/
+
+# 本地敏感配置（隔绝数据库密码、第三方API密钥）
+cursor-backend/src/main/resources/application-dev.yml
+cursor-backend/src/main/resources/application-local.yml
+
+# 系统隐藏文件
+.DS_Store
